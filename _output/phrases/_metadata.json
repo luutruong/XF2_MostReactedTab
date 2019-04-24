@@ -1,0 +1,20 @@
+{
+    "mrt_most_reacted_posts.txt": {
+        "global_cache": false,
+        "version_id": 1000000,
+        "version_string": "1.0.0",
+        "hash": "fac34bfb13942430536e38b74a85df33"
+    },
+    "mrt_most_reacted_threads.txt": {
+        "global_cache": false,
+        "version_id": 1000000,
+        "version_string": "1.0.0",
+        "hash": "57d67b027dd902fdd5ad50ea1f71d41a"
+    },
+    "mrt_post_in_thread.txt": {
+        "global_cache": false,
+        "version_id": 1000000,
+        "version_string": "1.0.0",
+        "hash": "8b7538c65750d83a82100d02973fcd08"
+    }
+}

@@ -1,0 +1,17 @@
+<xf:macro name="tabs_heading" arg-user="!">
+    <a href="{{ link('members/mrt-most-reacted', $user, {'tab': 'thread'}) }}"
+       class="tabs-tab" id="mrt-threads" role="tab">{{ phrase('mrt_most_reacted_threads') }}</a>
+    <a href="{{ link('members/mrt-most-reacted', $user, {'tab': 'post'}) }}"
+       class="tabs-tab" id="mrt-posts" role="tab">{{ phrase('mrt_most_reacted_posts') }}</a>
+</xf:macro>
+
+<xf:macro name="tabs_content" arg-user="!">
+    <li data-href="{{ link('members/mrt-most-reacted', $user, {'tab': 'thread'}) }}"
+        role="tabpanel" aria-labelledby="mrt-threads">
+        <div class="blockMessage">{{ phrase('loading...') }}</div>
+    </li>
+    <li data-href="{{ link('members/mrt-most-reacted', $user, {'tab': 'post'}) }}"
+        role="tabpanel" aria-labelledby="mrt-posts">
+        <div class="blockMessage">{{ phrase('loading...') }}</div>
+    </li>
+</xf:macro>

@@ -1,0 +1,9 @@
+{
+    "template": "member_view",
+    "description": "Add tabs heading",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:tabs:end]-->",
+    "replace": "<xf:macro template=\"mrt_member_view_macros\" \n\t\t  name=\"tabs_heading\" arg-user=\"{$user}\"/>\n$0"
+}

@@ -1,0 +1,58 @@
+<xf:title>{{ ($tab === 'post') ? phrase('mrt_most_reacted_posts') : phrase('mrt_most_reacted_threads') }}</xf:title>
+
+<div class="block">
+    <div class="block-container">
+        <ul class="block-body">
+            <xf:macro name="{$tab}" arg-entities="{$entities}"/>
+        </ul>
+    </div>
+
+    <div class="block-outer block-outer--after">
+        <xf:pagenav page="{$page}" perpage="{$perPage}" total="{$total}"
+                    link="members/mrt-most-reacted" data="{$user}" params="{'tab': $tab}"/>
+    </div>
+</div>
+
+<xf:macro name="thread" arg-entities="!">
+    <xf:foreach loop="$entities" value="$thread">
+        <li class="block-row block-row--separated">
+            <div class="contentRow">
+                <div class="contentRow-figure"><xf:avatar user="$thread.User" size="s" defaultname="{$thread.username}"/></div>
+                <div class="contentRow-main">
+                    <h3 class="contentRow-title"><a href="{{ link('threads', $thread) }}">{$thread.title}</a></h3>
+
+                    <div class="contentRow-snippet">{{ snippet($thread.FirstPost.message, 300, {'stripQuote': true}) }}</div>
+
+                    <div class="contentRow-minor contentRow-minor--hideLinks">
+                        <ul class="listInline listInline--bullet">
+                            <li>{{ phrase('reaction_score') }}: {$thread.first_post_reaction_score}</li>
+                            <li><xf:date time="$thread.post_date"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </xf:foreach>
+</xf:macro>
+
+<xf:macro name="post" arg-entities="!">
+    <xf:foreach loop="$entities" value="$post">
+        <li class="block-row block-row--separated">
+            <div class="contentRow">
+                <div class="contentRow-figure"><xf:avatar user="$post.User" size="s" defaultname="{$post.username}"/></div>
+                <div class="contentRow-main">
+                    <h3 class="contentRow-title"><small>{{ phrase('mrt_post_in_thread:') }}</small> <a href="{{ link('posts', $post) }}">{$post.Thread.title}</a></h3>
+
+                    <div class="contentRow-snippet">{{ snippet($post.message, 300, {'stripQuote': true}) }}</div>
+
+                    <div class="contentRow-minor contentRow-minor--hideLinks">
+                        <ul class="listInline listInline--bullet">
+                            <li>{{ phrase('reaction_score') }}: {$post.reaction_score}</li>
+                            <li><xf:date time="$post.post_date"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </xf:foreach>
+</xf:macro>

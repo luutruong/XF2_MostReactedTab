@@ -1,0 +1,12 @@
+{
+    "public/mrt_member_view_macros.html": {
+        "version_id": 1000000,
+        "version_string": "1.0.0",
+        "hash": "c62fcb567127f582585c4a96fccaa880"
+    },
+    "public/mrt_most_reacted_content.html": {
+        "version_id": 1000000,
+        "version_string": "1.0.0",
+        "hash": "dcd97363e12d5323d7ab63b519e84d84"
+    }
+}
