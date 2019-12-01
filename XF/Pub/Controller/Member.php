@@ -40,7 +40,7 @@ class Member extends XFCP_Member
         }
 
         $total = $finder->total();
-        $entities = ($total > 0) ? $finder->limitByPage($page, $perPage)->fetch() : [];
+        $entities = ($total > 0) ? $finder->limitByPage($page, $perPage)->fetch() : null;
 
         if ($entities) {
             $entities = $entities->filterViewable();
