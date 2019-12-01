@@ -52,7 +52,8 @@ class Member extends XFCP_Member
             'tab' => $tab,
             'user' => $user,
             'total' => $total,
-            'entities' => $entities
+            'entities' => $entities,
+            'pageNavParams' => compact('tab')
         ]);
     }
 }
